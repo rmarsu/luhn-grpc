@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package luhn;
+
+option go_package = "/home/r_rmarsu/grpc-luhn";
+
+service Valid {
+    rpc Valid(ValidRequest) returns (ValidResponse);
+}
+
+message ValidRequest {
+    string number = 1;
+}
+
+message ValidResponse {
+    bool valid = 1;
+}
